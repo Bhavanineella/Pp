@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\user\Desktop\ParallelProject\librarymanagementsystem\src\main\java\com\capgemini\librarymanagementsystem\controller\LibraryController.java"/>
 			<item value="C:\Users\user\Desktop\ParallelProject\librarymanagementsystem"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,19 +27,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.capgemini.librarymanagementsystemjdbc1"/>
-			<item value="com.capgemini.librarymanagementsystemusingjdbc"/>
-			<item value="com.capgemini.librarymanagementsystemJDBC"/>
-			<item value="com.capgemini.librarymanagementsystem"/>
+			<item value="com.capgemini.librarymanagementsystemjdbc"/>
+			<item value="com.capgemini.librarymanagementsystemhibernate"/>
 		</list>
 		<list key="groupId">
 			<item value="com.capgemini"/>
 		</list>
 		<list key="artifactId">
-			<item value="librarymanagementsystemjdbc1"/>
-			<item value="librarymanagementsystemusingjdbc"/>
-			<item value="librarymanagementsystemJDBC"/>
-			<item value="librarymanagementsystem"/>
+			<item value="librarymanagementsystemjdbc"/>
+			<item value="librarymanagementsystemhibernate"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -85,6 +82,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\user\Downloads\librarymanagementsystemhibernate"/>
 			<item value="C:\Users\user\Desktop\ParallelProject\librarymanagementsystem\src"/>
 			<item value="C:\Users\user\Desktop\ParallelProject\librarymanagementsystem"/>
 			<item value="C:\Users\user\Desktop\pp\librarymanagementsystemJDBC"/>

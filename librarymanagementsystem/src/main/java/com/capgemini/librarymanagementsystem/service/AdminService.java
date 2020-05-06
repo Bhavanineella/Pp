@@ -1,26 +1,26 @@
 package com.capgemini.librarymanagementsystem.service;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
-import com.capgemini.librarymanagementsystem.dto.Admin;
-import com.capgemini.librarymanagementsystem.dto.Book;
-import com.capgemini.librarymanagementsystem.dto.RequestBean;
-import com.capgemini.librarymanagementsystem.dto.User;
+import com.capgemini.librarymanagementsystem.dto.AdminInfo;
+import com.capgemini.librarymanagementsystem.dto.BookInfo;
+import com.capgemini.librarymanagementsystem.dto.RequestInfo;
+import com.capgemini.librarymanagementsystem.dto.UserInfo;
 
 public interface AdminService {
-	boolean registerAdmin(Admin admin);
-	Admin loginAdmin(String email,String password);
-	boolean addBook(Book book);
+	
+	boolean registerAdmin(AdminInfo admin);
+	AdminInfo loginAdmin(String email,String password);
+	boolean addBook(BookInfo book);
 	boolean removeBook(int id);
-	boolean updateBook(Book book);
-	LinkedList<Book> searchBookByTitle(String bookName);
-	LinkedList<Book> searchBookByAuthor(String author);
-	LinkedList<Book> searchBookByCategory(String category);
-	LinkedList<Book> getBooksInfo();
-
-	List<User> showUsers();
-	List<RequestBean> showRequests();
-	boolean bookIssue(User user,Book book);
-	boolean isBookReceived(User user,Book book);
+	boolean updateBook(BookInfo book);
+	ArrayList<BookInfo> searchBookByTitle(String bookname);
+	ArrayList<BookInfo> searchBookByAuthor(String author);
+	ArrayList<BookInfo> searchBookByCategory(String category);
+	ArrayList<BookInfo> getBooksInfo();
+	List<UserInfo> showUsers();
+	List<RequestInfo> showRequests();
+	boolean bookIssue(UserInfo user,BookInfo book);
+	boolean isBookReceived(UserInfo user,BookInfo book);
 }

@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="lombok.Data"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dao.AdminDaoImplementation"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.service.AdminServiceImplementation"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.service.AdminService"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dao.AdminDao"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.factory.AdminFactory"/>
-<fullyQualifiedTypeName name="java.security.Provider.Service"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.db.CommonDB"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.factory.UserFactory"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dao.UserDaoImplementation"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dao.UserDao"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.service.UserServiceImplementation"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.AdminInfo"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.service.UserService"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.factory.CommonFactory"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.UserInfo"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
@@ -32,9 +16,6 @@
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dto.AdminInfo"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dto.UserInfo"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dto.BooksInfo"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.Admin"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.User"/>
-<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.RequestBean"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.db.LibraryDB"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dao.UserDAOImplement"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dao.UsersDAOImplement"/>
@@ -55,5 +36,28 @@
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dto.BorrowedBooks"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dto.BookInfo"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc1.dto.UsersInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc.dao.AdminDAO"/>
 <fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.Book"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.User"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.RequestBean"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc.dto.BookInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc.dto.BorrowedBooks"/>
+<fullyQualifiedTypeName name="com.capgemini.lmsjdbc.service.UserService"/>
+<fullyQualifiedTypeName name="com.capgemini.lmsjdbc.service.UserServiceImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc.service.UsersService"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc.service.UsersServiceImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemjdbc.factory.LibraryFactory"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemhibernate.dto.BorrowedBooksInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemhibernate.dto.BookIssueInfo"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemhibernate.dao.UserDAOImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemhibernate.validation.LibraryValidation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystemhibernate.dto.RequestInfo"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.validation.Validation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.factory.LibraryFactory"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.service.AdminService"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.dto.Admin"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.exception.LMSException"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagementsystem.service.UserService"/>
 </qualifiedTypeNameHistroy>

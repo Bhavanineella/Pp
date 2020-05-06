@@ -1,133 +1,111 @@
 package com.capgemini.librarymanagementsystem.dao;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 import com.capgemini.librarymanagementsystem.db.LibraryDB;
-import com.capgemini.librarymanagementsystem.dto.Book;
-import com.capgemini.librarymanagementsystem.dto.RequestBean;
-import com.capgemini.librarymanagementsystem.dto.User;
+import com.capgemini.librarymanagementsystem.dto.BookInfo;
+import com.capgemini.librarymanagementsystem.dto.RequestInfo;
+import com.capgemini.librarymanagementsystem.dto.UserInfo;
 import com.capgemini.librarymanagementsystem.exception.LMSException;
 
-public class UserDAOImplement implements UserDAO{
+public class UserDAOImplement implements UserDAO {
 
 	@Override
-	public boolean registerUser(User user) {
-		for(User u : LibraryDB.USER) {
-			if(u.getEmail().equals(user.getEmail())) {
+	public boolean registerUser(UserInfo user) {
+		for (UserInfo u : LibraryDB.USER) {
+			if ((u.getEmail()).equals(user.getEmail())) {
 				return false;
 			}
 		}
 		LibraryDB.USER.add(user);
 		return true;
 	}
-
+	
 	@Override
-	public User loginUser(String email, String password){
-		for(User user : LibraryDB.USER) {
-			if(user.getEmail().equals(email) && user.getPassword().equals(password)) {
-				return user;
+	public UserInfo loginUser(String email, String password) {
+		for (UserInfo student : LibraryDB.USER) {
+			if ((student.getEmail().equals(email)) && (student.getPassword().equals(password))) {
+				return student;
 			}
 		}
 		throw new LMSException("Invalid Credentials");
 	}
-
-
+	
 	@Override
-	public LinkedList<Book> searchBookByTitle(String bookName) {
-		LinkedList<Book> searchList=new LinkedList<Book>();
-		for(int i=0;i<=LibraryDB.BOOKS.size()-1;i++)
-		{
-			Book retrievedBook=LibraryDB.BOOKS.get(i);
-			String retrievedBookName=retrievedBook.getBookName();
-			if(bookName.equals(retrievedBookName))
-			{
+	public ArrayList<BookInfo> searchBookByTitle(String bookName) {
+		ArrayList<BookInfo> searchList = new ArrayList<BookInfo>();
+		for (int i = 0; i <= LibraryDB.BOOKS.size()-1; i++) {
+			BookInfo retrievedBook = LibraryDB.BOOKS.get(i);
+			String retrievedBname = retrievedBook.getBookName();
+			if (bookName.equals(retrievedBname)) {
 				searchList.add(retrievedBook);	
 				return searchList;
 			}
 		}
-		if(searchList.size()==0)
-		{
+		if (searchList.size() == 0) {
 			throw new LMSException ("Book is not found");
-		}
-		else
-		{
+		} else {
 			return searchList;
 		}
-
 	}
 
 	@Override
-	public LinkedList<Book> searchBookByAuthor(String author) {
-		LinkedList<Book> searchList=new LinkedList<Book>();
-		for(int i=0;i<=LibraryDB.BOOKS.size()-1;i++)
-		{
-			Book retrievedBook=LibraryDB.BOOKS.get(i);
-			String retrievedBookAuthor=retrievedBook.getAuthor();
-			if(author.equals(retrievedBookAuthor))
-			{
+	public ArrayList<BookInfo> searchBookByAuthor(String author) {
+		ArrayList<BookInfo> searchList = new ArrayList<BookInfo>();
+		for (int i = 0; i <= LibraryDB.BOOKS.size()-1; i++) {
+			BookInfo retrievedBook = LibraryDB.BOOKS.get(i);
+			String retrievedBAuthor = retrievedBook.getAuthor();
+			if (author.equals(retrievedBAuthor)) {
 				searchList.add(retrievedBook);	
 			}
 		}
-		if(searchList.size()==0)
-		{
+		if (searchList.size() == 0) {
 			throw new LMSException ("Book is not found");
-		}
-		else
-		{
+		} else {
 			return searchList;
 		}	
 	}
-
+	
 	@Override
-	public LinkedList<Book> searchBookByCategory(String category) {
-		LinkedList<Book> searchList=new LinkedList<Book>();
-		for(int i=0;i<=LibraryDB.BOOKS.size()-1;i++)
-		{
-			Book retrievedBook=LibraryDB.BOOKS.get(i);
-			String retrievedCategory=retrievedBook.getCategory();
-			if(category.equals(retrievedCategory))
-			{
+	public ArrayList<BookInfo> searchBookByCategory(String category) {
+		ArrayList<BookInfo> searchList = new ArrayList<BookInfo>();
+		for (int i = 0; i <= LibraryDB.BOOKS.size()-1; i++) {
+			BookInfo retrievedBook=LibraryDB.BOOKS.get(i);
+			String retrievedBookType=retrievedBook.getCategory();
+			if (category.equals(retrievedBookType)) {
 				searchList.add(retrievedBook);	
 			}
 		}
-		if(searchList.size()==0)
-		{
+		if (searchList.size() == 0) {
 			throw new LMSException("Book not found");
-		}
-		else
-		{
+		} else {
 			return searchList;
 		}	
-
+	}
+	
+	@Override
+	public ArrayList<BookInfo> getBooksInfo() {
+			return LibraryDB.BOOKS;
 	}
 
 	@Override
-	public LinkedList<Book> getBooksInfo() {
-		return LibraryDB.BOOKS;
-	}
-
-	@Override
-	public RequestBean bookRequest(User user, Book book) {
+	public RequestInfo bookRequest(UserInfo user, BookInfo book) {
 		boolean flag = false, 
-				isRequestExists = false;
-		RequestBean requestInfo = new RequestBean();
-		User userInfo2 = new User();
-		Book bookInfo2 = new Book();
-
-		for (RequestBean requestInfo2 : LibraryDB.REQUEST) {
-			if (book.getId() == requestInfo2.getBookInfo().getId()) {
+		isRequestExists = false;
+		RequestInfo requestInfo = new RequestInfo();
+		UserInfo StudentInfo2 = new UserInfo();
+		BookInfo bookInfo2 = new BookInfo();
+		for (RequestInfo requestInfo2 : LibraryDB.REQUEST) {
+			if (book.getBookId() == requestInfo2.getBookInfo().getBookId()) {
 				isRequestExists = true;
-
 			}
-
 		}
-
 		if (!isRequestExists) {
-			for (User userBean : LibraryDB.USER) {
-				if (user.getId() == userBean.getId()) {
-					for (Book book1 : LibraryDB.BOOKS) {
-						if (book1.getId() == book1.getId()) {
-							userInfo2 = userBean;
+			for (UserInfo studentBean : LibraryDB.USER) {
+				if (user.getId() == studentBean.getId()) {
+					for (BookInfo book1 : LibraryDB.BOOKS) {
+						if (book1.getBookId() == book1.getBookId()) {
+							StudentInfo2 = studentBean;
 							bookInfo2 = book1;
 							flag = true;
 						}
@@ -136,36 +114,28 @@ public class UserDAOImplement implements UserDAO{
 			}
 			if (flag == true) {
 				requestInfo.setBookInfo(bookInfo2);
-				requestInfo.setUserInfo(userInfo2);;
+				requestInfo.setUserInfo(StudentInfo2);;
 				LibraryDB.REQUEST.add(requestInfo);
 				return requestInfo;
 			}
-
 		}
-
 		throw new LMSException("Invalid request or you cannot request that book");
-
 	}
-
+	
 	@Override
-	public RequestBean bookReturn(User user, Book book) {
-		for (RequestBean requestInfo : LibraryDB.REQUEST) {
-
-			if (requestInfo.getBookInfo().getId() == book.getId() &&
-					requestInfo.getUserInfo().getId() == user.getId() &&
+	public RequestInfo bookReturn(UserInfo student, BookInfo book) {
+		for (RequestInfo requestInfo : LibraryDB.REQUEST) {
+			if (requestInfo.getBookInfo().getBookId() == book.getBookId() &&
+					requestInfo.getUserInfo().getId() == student.getId() &&
 					requestInfo.isIssued() == true) {
-
-
 				System.out.println("Returning Issued book only");
 				requestInfo.setReturned(true);
-
-
 				return requestInfo;
 			}
-
 		}
-
 		throw new  LMSException("Invalid return ");
 	}
-
 }
+	
+
+

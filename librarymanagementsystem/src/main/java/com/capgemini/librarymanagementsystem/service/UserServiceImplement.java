@@ -1,56 +1,54 @@
 package com.capgemini.librarymanagementsystem.service;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 import com.capgemini.librarymanagementsystem.dao.UserDAO;
-import com.capgemini.librarymanagementsystem.dto.Book;
-import com.capgemini.librarymanagementsystem.dto.RequestBean;
-import com.capgemini.librarymanagementsystem.dto.User;
+import com.capgemini.librarymanagementsystem.dto.BookInfo;
+import com.capgemini.librarymanagementsystem.dto.RequestInfo;
+import com.capgemini.librarymanagementsystem.dto.UserInfo;
 import com.capgemini.librarymanagementsystem.factory.LibraryFactory;
 
-public class UserServiceImplement implements UserService{
-	private UserDAO dao = LibraryFactory.getUserDao();
+public class UserServiceImplement implements UserService {
+	
+	private UserDAO dao=LibraryFactory.getUserDAO();
 
 	@Override
-	public boolean registerUser(User user) {
+	public boolean registerUser(UserInfo user) {
 		return dao.registerUser(user);
 	}
 
 	@Override
-	public User loginUser(String email, String password) {
+	public UserInfo loginUser(String email, String password) {
 		return dao.loginUser(email, password);
 	}
 
 	@Override
-	public RequestBean bookRequest(User user, Book book) {
+	public RequestInfo bookRequest(UserInfo user, BookInfo book) {
 		return dao.bookRequest(user, book);
 	}
 
 	@Override
-	public RequestBean bookReturn(User user, Book book) {
+	public RequestInfo bookReturn(UserInfo user, BookInfo book) {
 		return dao.bookReturn(user, book);
 	}
 
 	@Override
-	public LinkedList<Book> searchBookByTitle(String bookName) {
+	public ArrayList<BookInfo> searchBookByTitle(String bookName) {
 		return dao.searchBookByTitle(bookName);
 	}
 
 	@Override
-	public LinkedList<Book> searchBookByAuthor(String author) {
+	public ArrayList<BookInfo> searchBookByAuthor(String author) {
 		return dao.searchBookByAuthor(author);
 	}
 
 	@Override
-	public LinkedList<Book> searchBookByCategory(String category) {
+	public ArrayList<BookInfo> searchBookByCategory(String category) {
 		return dao.searchBookByCategory(category);
 	}
 
 	@Override
-	public LinkedList<Book> getBooksInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<BookInfo> getBookInfo() {
+		return dao.getBooksInfo();
 	}
-
-	
 }

@@ -5,20 +5,24 @@ import com.capgemini.librarymanagementsystem.dao.AdminDAOImplement;
 import com.capgemini.librarymanagementsystem.dao.UserDAO;
 import com.capgemini.librarymanagementsystem.dao.UserDAOImplement;
 import com.capgemini.librarymanagementsystem.service.AdminService;
-import com.capgemini.librarymanagementsystem.service.AdminServiceImplement;
+import com.capgemini.librarymanagementsystem.service.AdminServiceImplementation;
 import com.capgemini.librarymanagementsystem.service.UserService;
 import com.capgemini.librarymanagementsystem.service.UserServiceImplement;
 
 public class LibraryFactory {
-	public static AdminDAO getAdminDao() {
+	
+	public static AdminDAO getAdminDAO() {
 		return new AdminDAOImplement();
 	}
+	
 	public static AdminService getAdminService() {
-		return new AdminServiceImplement();
+		return new AdminServiceImplementation();
 	}
-	public static UserDAO getUserDao() {
+	
+	public static UserDAO getUserDAO() {
 		return new UserDAOImplement();
 	}
+	
 	public static UserService getUserService() {
 		return new UserServiceImplement();
 	}

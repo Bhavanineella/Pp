@@ -1,0 +1,42 @@
+package com.capgemini.librarymanagementsystemjdbc.dto;
+
+import java.util.Date;
+
+public class BookIssueDetails {
+	private int bookId;
+	private int userId;
+	private Date issueDate;
+	private Date returnDate;
+
+	public int getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(int bId) {
+		this.bookId = bId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setuId(int userId) {
+		this.userId = userId;
+	}
+
+	public Date getIssueDate() {
+		return issueDate;
+	}
+
+	public void setIssueDate(Date issueDate) {
+		this.issueDate = issueDate;
+	}
+
+	public Date getReturnDate() {
+		return returnDate;
+	}
+
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
+}
